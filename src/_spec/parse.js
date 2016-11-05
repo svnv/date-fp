@@ -23,10 +23,18 @@ describe('parse', () => {
     assert.equal(actual, expected)
   })
   it('should parse DD/MM/YY', () => {
-    const datestring = '01/12/14'
+    const datestring = '01/12/04'
     const pattern = 'DD/MM/YY'
     const actual = parse(pattern, datestring).getTime()
-    const expected = of([2014, 11, 1]).getTime()
+    const expected = of([2004, 11, 1]).getTime()
+
+    assert.equal(actual, expected)
+  })
+  it('should parse DD/MM/Y', () => {
+    const datestring = '01/12/4'
+    const pattern = 'DD/MM/Y'
+    const actual = parse(pattern, datestring).getTime()
+    const expected = of([2004, 11, 1]).getTime()
 
     assert.equal(actual, expected)
   })
