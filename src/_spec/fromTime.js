@@ -7,4 +7,8 @@ describe('fromTime', () => {
     assert.equal(isValid(fromTime(0)), true)
     assert.equal(fromTime(0).getTime(), 0)
   })
+
+  it('should return an invalid date given a non integer', () => {
+    assert.equal(fromTime('no').toString(), 'Invalid Date')
+  })
 })
